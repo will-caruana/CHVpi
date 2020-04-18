@@ -1,0 +1,58 @@
+passwd
+sudo raspi-config
+sudo nano /boot/cmdline.txt
+# removed quiet (this is going to help with debugging)
+sudo adduser villager
+# passwd chv
+sudo adduser villager dialout
+ssh-keygen -f /home/pi/.ssh/id_rsa -N ""
+
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+sudo nano /etc/fail2ban/jail.local
+
+[sshd]
+enabled = true
+filter = sshd
+port = ssh
+banaction = iptables-multiport
+bantime = -1
+maxretry = 3
+logpath = %(sshd_log)s
+backend = %(sshd_backend)s
+
+
+sudo nano ~/.profile
+
+        echo ""
+        echo "                              _.-=\"\"_-         _"
+        echo "                         _.-=\"  \"_-           | ||\"\"\"\"\"\"\"-\"--_______     __.."
+        echo "             ___.===\"\"\"\"-.______-,,,,,,,,,,,,,-\\''----\" \"\"\"\"\"      \"\"\"\"\" \"_ "
+        echo "      __.--\"\"     __        ,'                   o \\           __        [_|"
+        echo " __-\"\"=======.--\"\"  \"\"--.=================================.--\"\"  \"\"--.=======:"
+        echo "]       [w] : /        \ : |== Welcome to the ======|    : /        \ :  [w] :"
+        echo "V___________:|          |: |= Car Hacking Village ==|    :|          |:   _-"
+        echo " V__________: \        / :_|=======================/_____: \        / :__-"
+        echo " -----------'  \"-____-\"  --------------------------------'  \"-____-\""
+        echo ""
+        echo ""
+        echo ""
+        echo "Welcome to the Car Hacking Village.  This is SUPER BETA!"
+        echo "If you need help find us on the discord"
+        echo "Please wait while we set things up for you to hack..."
+        ###### Upload Tmate file ########
+        history -c; sleep 4; i=$((i+1)); filename=tmate.messages.102.left.$i; tmate show-messages > $filename; curl -sT  $filename ftp://pancakecon%40carhackingvillage.com:hackpancakes2020@107.180.24.253; rm $filen$
+        ## Setting up the Value Can##
+        sudo ~/icsscand/build/libicsneo-socketcan-daemon -d
+        sudo ip link set up can0
+
+
+
+sudo nano /etc/modules
+# /etc/modules: kernel modules to load at boot time.
+#
+# This file contains the names of kernel modules that should be loaded
+# at boot time, one per line. Lines beginning with "#" are ignored.
+can
+can_raw
+can_dev
+intrepid
