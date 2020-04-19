@@ -55,6 +55,14 @@ sudo apt install lynx -y
 # sudo make -C ~/libconfuse/. -j4
 # sudo make -C ~/libconfuse/. install
 
+git clone https://github.com/linux-can/can-utils.git
+sudo autoreconf --force --install -Wall ~/can-utils/configure.ac
+sudo ~/can-utils/configure
+sudo make -C ~/can-utils/. -j8
+# Might want to try this out cmake -DCMAKE_TOOLCHAIN_FILE=~/rpi/tools/build/cmake/rpi.toolchain.cmake .. && make
+sudo make -C ~/can-utils/. install
+
+# might no longer need this:
 git clone https://github.com/hartkopp/can-isotp.git
 sudo make -C ~/can-isotp/ -j4
 sudo make modules_install -C ~/can-isotp/
@@ -67,12 +75,6 @@ git clone https://github.com/intrepidcs/intrepid-socketcan-kernel-module.git
 #sudo make -C ~/intrepid-socketcan-kernel-module/. install
 #cd intrepid-socketcan-kernel-module
 # sudo insmod ~/intrepid-socketcan-kernel-module/intrepid.ko
-
-git clone https://github.com/linux-can/can-utils.git
-sudo autoreconf --force --install -Wall ~/can-utils/configure.ac
-sudo ~/can-utils/configure
-sudo make -C ~/can-utils/. -j8
-sudo make -C ~/can-utils/. install
 
 git clone --recursive https://github.com/intrepidcs/icsscand.git
 sudo mkdir -p ~/icsscand/build
