@@ -24,6 +24,8 @@ sudo pip3 install spidev
 sudo pip3 install python-can
 sudo pip3 install can-isotp	
 sudo pip3 install treelib
+sudo pip3 install pexpect
+sudo pip3 install manifest-tool
 sudo apt install build-essential -y
 sudo apt install raspberrypi-kernel-headers -y
 sudo apt install libusb-1.0-0-dev -y
