@@ -7,6 +7,11 @@ sudo adduser villager
 sudo adduser villager dialout
 ssh-keygen -f /home/pi/.ssh/id_rsa -N ""
 
+
+git clone https://github.com/linted/HardwareCheckout.git
+sudo ./HardwareCheckout/tmate/install.sh
+
+
 sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 sudo nano /etc/fail2ban/jail.local
 
@@ -47,12 +52,3 @@ sudo nano ~/.profile
 
 
 
-sudo nano /etc/modules
-# /etc/modules: kernel modules to load at boot time.
-#
-# This file contains the names of kernel modules that should be loaded
-# at boot time, one per line. Lines beginning with "#" are ignored.
-can
-can_raw
-can_dev
-intrepid
