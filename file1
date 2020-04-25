@@ -70,12 +70,12 @@ sudo apt install can-utils -y
 # # Might want to try this out cmake -DCMAKE_TOOLCHAIN_FILE=~/rpi/tools/build/cmake/rpi.toolchain.cmake .. && make
 #sudo make -C ~/can-utils/. install
 
-# might no longer need this:
-# it clone https://github.com/hartkopp/can-isotp.git
-# sudo make -C ~/can-isotp/ -j4
-# sudo make modules_install -C ~/can-isotp/
-# sudo modprobe can
-# sudo insmod ~/can-isotp/net/can/can-isotp.ko
+# might no longer need this I think I do:
+git clone https://github.com/hartkopp/can-isotp.git
+sudo make -C ~/can-isotp/ -j4
+sudo make modules_install -C ~/can-isotp/
+sudo modprobe can
+sudo insmod ~/can-isotp/net/can/can-isotp.ko
 
 git clone https://github.com/intrepidcs/intrepid-socketcan-kernel-module.git
 #just cd in and make it I cant get it to work in the script
@@ -89,3 +89,7 @@ sudo mkdir -p ~/icsscand/build
 sudo cmake -S ~/icsscand/ -B ~/icsscand/build -DCMAKE_BUILD_TYPE=Release
 sudo make -C ~/icsscand/build/. -j8
 sudo ~/icsscand/build/libicsneo-socketcan-daemon
+
+sudo echo "can" >> /etc/modules
+sudo echo "can_raw" >> /etc/modules
+sudo echo "can_dev" >> /etc/modules
