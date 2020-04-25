@@ -18,7 +18,7 @@ filter = sshd
 port = ssh
 banaction = iptables-multiport
 bantime = -1
-maxretry = 3
+maxretry = 10
 logpath = %(sshd_log)s
 backend = %(sshd_backend)s
 
