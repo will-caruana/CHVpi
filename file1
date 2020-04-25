@@ -90,6 +90,9 @@ sudo cmake -S ~/icsscand/ -B ~/icsscand/build -DCMAKE_BUILD_TYPE=Release
 sudo make -C ~/icsscand/build/. -j8
 sudo ~/icsscand/build/libicsneo-socketcan-daemon
 
+git clone https://github.com/linted/HardwareCheckout.git
+sudo ./HardwareCheckout/tmate/install.sh
+
 sudo echo "can" >> /etc/modules
 sudo echo "can_raw" >> /etc/modules
 sudo echo "can_dev" >> /etc/modules
