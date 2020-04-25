@@ -54,23 +54,7 @@ sudo apt install can-utils -y
 # I tried to put it all on one or two lines and it was just horrible.
 # I was trying to satisfy all the requirments that alow you to do extra little things when having things install. We can scale this back.  
 
-
-# git clone https://github.com/martinh/libconfuse.git
-# this next line needs to be autoreconf untill I fix it just build it normally
-# sudo ./autogen.sh ~/libconfuse/canfigure.ac
-# sudo ~/libconfuse/configure
-# sudo make -C ~/libconfuse/. -j4
-# sudo make -C ~/libconfuse/. install
-
-# getting ride of this for 
-#git clone https://github.com/linux-can/can-utils.git
-#sudo autoreconf --force --install -Wall ~/can-utils/configure.ac
-#sudo ~/can-utils/configure
-#sudo make -C ~/can-utils/. -j8
-# # Might want to try this out cmake -DCMAKE_TOOLCHAIN_FILE=~/rpi/tools/build/cmake/rpi.toolchain.cmake .. && make
-#sudo make -C ~/can-utils/. install
-
-# might no longer need this I think I do:
+# might no longer need this but I am starting to think I do...:
 git clone https://github.com/hartkopp/can-isotp.git
 sudo make -C ~/can-isotp/ -j4
 sudo make modules_install -C ~/can-isotp/
