@@ -7,11 +7,6 @@ sudo adduser villager
 sudo adduser villager dialout
 ssh-keygen -f /home/pi/.ssh/id_rsa -N ""
 
-
-git clone https://github.com/linted/HardwareCheckout.git
-sudo ./HardwareCheckout/tmate/install.sh
-
-
 sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 sudo nano /etc/fail2ban/jail.local
 
