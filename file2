@@ -1,5 +1,7 @@
 passwd
+#set a password
 sudo raspi-config
+#set up the wifi if you need it
 sudo nano /boot/cmdline.txt
 # removed quiet (this is going to help with debugging)
 sudo adduser villager
