@@ -3,7 +3,7 @@ passwd
 sudo raspi-config
 #set up the wifi if you need it
 sudo nano /boot/cmdline.txt
-# removed quiet (this is going to help with debugging)
+# removed quiet (this is optional but it is going to help with debugging if you have problems and man do I have problems)
 sudo adduser villager
 # passwd chv
 sudo adduser villager dialout
@@ -11,7 +11,6 @@ ssh-keygen -f /home/pi/.ssh/id_rsa -N ""
 
 sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 sudo nano /etc/fail2ban/jail.local
-
 [sshd]
 enabled = true
 filter = sshd
@@ -39,13 +38,8 @@ sudo nano ~/.profile
         echo ""
         echo ""
         echo "Welcome to the Car Hacking Village.  This is SUPER BETA!"
-        echo "If you need help find us on the discord"
+        echo "If you need help find us on the discord or slack or by phone at 617-440-8667"
         echo "Please wait while we set things up for you to hack..."
-        ###### Upload Tmate file ########
-        history -c; sleep 4; i=$((i+1)); filename=tmate.messages.102.left.$i; tmate show-messages > $filename; curl -sT  $filename ftp://pancakecon%40carhackingvillage.com:hackpancakes2020@107.180.24.253; rm $filen$
         ## Setting up the Value Can##
         sudo ~/icsscand/build/libicsneo-socketcan-daemon -d
         sudo ip link set up can0
-
-
-
