@@ -1,0 +1,7 @@
+can-isotp
+manifest-tool
+pexpect
+python-can
+RPi.GPIO
+spidev
+treelib
