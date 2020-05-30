@@ -1,4 +1,5 @@
 # CHVpi
+
 How to set up the Pi for the CHV:
 
 1. Login to your Rasberry Pi as user pi
@@ -17,8 +18,8 @@ By default chvpi_init.sh does not require any arguments, if you want rtl-sdr too
 ```./chvpi_init.sh sdr```
 
 
-Python Example to be loaded onto the Pi:
-CanFuzz_SIDs.py
-CanFuzz_TesterPresent.py
-controllerareanetwork.py
-iso14229.py
+Python Example to be loaded onto the Pi:\
+CanFuzz_SIDs.py\
+CanFuzz_TesterPresent.py\
+controllerareanetwork.py\
+iso14229.py\
