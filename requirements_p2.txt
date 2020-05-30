@@ -1,6 +1,0 @@
-manifest-tool
-pexpect
-RPi.GPIO
-spidev
-python-can
-
