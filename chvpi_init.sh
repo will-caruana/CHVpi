@@ -69,6 +69,7 @@ pexpect
 RPi.GPIO
 spidev
 python-can
+pyvit
 EOF
 
 sudo cat <<EOF > $PYTHON3_REQS
@@ -80,6 +81,7 @@ RPi.GPIO
 spidev
 treelib
 pyrtlsdr
+reversegear
 EOF
 
 if [ $1 = "sdr" ]; then
