@@ -45,7 +45,7 @@ sudo apt-get -qq -y update && sudo apt-get -qq -y upgrade
 
 
 echo "Installing development tools..."
-sudo apt-get install -y git build-essential cmake p7zip-full
+sudo apt-get install -y git build-essential cmake p7zip-full dfu-util
 sudo apt-get install -y python-pip python-setuptools python-pil python-numpy python-pydot python-pydot-ng
 sudo apt-get install -y python3-pip python3-pil python3-numpy 
 sudo apt-get install -y raspberrypi-kernel-headers linux-kernel-headers 
