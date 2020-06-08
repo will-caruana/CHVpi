@@ -82,6 +82,7 @@ spidev
 treelib
 pyrtlsdr
 reversegear
+cantact
 EOF
 
 if [ $1 = "sdr" ]; then
