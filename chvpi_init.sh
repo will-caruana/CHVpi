@@ -93,7 +93,7 @@ if [ $1 = "sdr" ]; then
 	blacklist dvb_usb_rtl28xxu
 	blacklist rtl2832
 	blacklist rtl2830
-	EOF
+EOF
 fi
 
 echo "Installing python packages..."
