@@ -82,17 +82,17 @@ treelib
 pyrtlsdr
 EOF
 
-if [ $1 = "sdr" ]; then
-	sudo cat <<EOF >> $PYTHON3_REQS
-	libffi-dev 
-	libffi6
-	cairocffi
-	EOF
+if [[ $1 = "sdr" ]]; then
+sudo cat <<EOF >> $PYTHON3_REQS
+libffi-dev 
+libffi6
+cairocffi
+EOF
 
-	sudo cat <<EOF > /etc/modprobe.d/no-rtl.conf
-	blacklist dvb_usb_rtl28xxu
-	blacklist rtl2832
-	blacklist rtl2830
+sudo cat <<EOF > /etc/modprobe.d/no-rtl.conf
+blacklist dvb_usb_rtl28xxu
+blacklist rtl2832
+blacklist rtl2830
 EOF
 fi
 
