@@ -146,29 +146,6 @@ sudo cd $SCRIPT_DIR
 sudo git clone https://github.com/linted/HardwareCheckout.git
 sudo ./HardwareCheckout/tmate/install.sh
 
-echo "Enable I2C modules"
-sudo echo "can" >> /etc/modules
-sudo echo "can_raw" >> /etc/modules
-sudo echo "can_dev" >> /etc/modules
-###After enabling I2C typically a reboot is needed###
-
-echo "Your password will expire on next login!"
-passwd -e
-
-###Creating a user with a home folder remove -m if you do not want a home folder###
-sudo adduser -m village
-sudo adduser --disabled-password --gecos "" -m $DIALOUT_USER
-
-###This is not secure at all, but for automation's sake###
-echo chv | passwd $DIALOUT_USER --stdin
-# passwd chv
-
-###Add villager to dialout group###
-sudo usermod -a -G dialout $DIALOUT_USER
-
-###Generate a strong ssh key###
-ssh-keygen -b 4096 -f ~/.ssh/id_rsa -N ""
-
 ###Creat/Update F2B Config###
 sed  '/\[sshd\]/a###CHV INSTALLER MODS###\nmaxretry = 10\nbantime = -1\niptables-multiport\nenabled = true\nfilter = sshd\n###END MODS###\n' /etc/fail2ban/jail.conf > /etc/fail2ban/jail.local.conf
 
@@ -199,10 +176,18 @@ sudo cat <<"EOF" >> ~/.profile
 EOF
 
 
+echo "Enable I2C modules"
+sudo echo "can" >> /etc/modules
+sudo echo "can_raw" >> /etc/modules
+sudo echo "can_dev" >> /etc/modules
+###After enabling I2C typically a reboot is needed###
 
 ## Setting up the Value Can##
 sudo ~/icsscand/build/libicsneo-socketcan-daemon -d
 sudo ip link set up can0
+
+echo "Your password will expire on next login!"
+passwd -e
 
 read -n 1 -r -s -p $'Press enter to reboot...\n'
 sudo reboot
