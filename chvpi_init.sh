@@ -3,8 +3,6 @@
 ###CHV Rasberry Pi Init Script Version 3###
 
 SCRIPT_DIR=/opt
-HANDLING_USER=pi
-DIALOUT_USER=villager
 PYTHON2_REQS=requirements_p2.txt
 PYTHON3_REQS=requirements_p3.txt
 
@@ -156,7 +154,9 @@ sudo service fail2ban reload
 
 
 ###Update ###
-sudo cat <<"EOF" >> ~/.profile
+sudo cat <<"EOF" >> ~/.bashrc
+
+echo "  
 
 
         
@@ -175,6 +175,8 @@ sudo cat <<"EOF" >> ~/.profile
         Welcome to the Car Hacking Village.  This is SUPER BETA!
         If you need help find us on the discord or slack or by phone at 617-440-8667
 	Please wait while we set things up for you to hack...
+	
+"
 
 EOF
 
