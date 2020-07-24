@@ -54,7 +54,7 @@ echo "Installing development libraries"
 sudo apt-get install -qq -y libusb-1.0-0-dev libboost-all-dev libpcap-dev libconfuse-dev libffi-dev libbsd-dev xorg-dev
 
 echo "Installing additional tools..."
-sudo apt-get install -qq -y doxygen autoconf graphviz autopoint
+sudo apt-get install -qq -y doxygen autoconf graphviz autopoint xclip
 sudo apt-get install -qq -y flex gawk lexicon gettext binutils samba lynx binwalk screen can-utils tmate fail2ban
 
 if [ $1 = "sdr" ]; then
