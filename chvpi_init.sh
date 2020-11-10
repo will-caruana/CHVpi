@@ -156,27 +156,25 @@ sudo service fail2ban reload
 ###Update ###
 sudo cat <<"EOF" >> ~/.bashrc
 
-echo "  
-
-
-        
-                                      _.-=\"\"_-         _
-                                 _.-=\"  \"_-           | ||\"\"\"\"\"\"\"-\"--_______     __..
-                     ___.===\"\"\"\"-.______-,,,,,,,,,,,,,-\\''----\" \"\"\"\"\"      \"\"\"\"\" \"_ 
-              __.--\"\"     __        ,'                   o \\           __        [_|
-         __-\"\"=======.--\"\"  \"\"--.=================================.--\"\"  \"\"--.=======:
-        ]       [w] : /        \ : |== Welcome to the ======|    : /        \ :  [w] :
-        V___________:|          |: |= Car Hacking Village ==|    :|          |:   _-
-         V__________: \        / :_|=======================/_____: \        / :__-
-         -----------'  \"-____-\"  --------------------------------'  \"-____-\"
+echo "
 
 
 
-        Welcome to the Car Hacking Village.  This is SUPER BETA!
-        If you need help find us on the discord or slack or by phone at 617-440-8667
-	Please wait while we set things up for you to hack...
-	
-"
+                                _.-=\"\"_-         _
+                           _.-=\"  \"_-           | ||\"\"\"\"\"\"\"-\"--_______     __..
+               ___.===\"\"\"\"-.______-,,,,,,,,,,,,,-\\''----\" \"\"\"\"\"      \"\"\"\"\" \"_
+        __.--\"\"     __        ,'                   o \\           __        [_|
+   __-\"\"=======.--\"\"  \"\"--.=================================.--\"\"  \"\"--.=======:
+  ]       [w] : /        \ : |== Welcome to the ======|    : /        \ :  [w] :
+  V___________:|          |: |= Car Hacking Village ==|    :|          |:   _-
+   V__________: \        / :_|=======================/_____: \        / :__-
+   -----------'  \"-____-\"  --------------------------------'  \"-____-\"
+
+
+
+  Welcome to the Car Hacking Village.  This is SUPER BETA!
+  If you need help find us on the discord or slack or by phone at 617-440-8667
+  Please wait while we set things up for you to hack...
 
 EOF
 
