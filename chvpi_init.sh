@@ -3,8 +3,6 @@
 ###CHV Rasberry Pi Init Script Version 3###
 
 SCRIPT_DIR=/opt
-HANDLING_USER=pi
-DIALOUT_USER=villager
 PYTHON2_REQS=requirements_p2.txt
 PYTHON3_REQS=requirements_p3.txt
 
@@ -54,7 +52,7 @@ echo "Installing development libraries"
 sudo apt-get install -qq -y libusb-1.0-0-dev libboost-all-dev libpcap-dev libconfuse-dev libffi-dev libbsd-dev xorg-dev
 
 echo "Installing additional tools..."
-sudo apt-get install -qq -y doxygen autoconf graphviz autopoint xclip
+sudo apt-get install -qq -y doxygen autoconf graphviz autopoint
 sudo apt-get install -qq -y flex gawk lexicon gettext binutils samba lynx binwalk screen can-utils tmate fail2ban
 
 if [ $1 = "sdr" ]; then
@@ -156,25 +154,27 @@ sudo service fail2ban reload
 
 
 ###Update ###
-sudo cat <<"EOF" >> ~/.profile
+sudo cat <<"EOF" >> ~/.bashrc
 
-
-        
-                                      _.-=\"\"_-         _
-                                 _.-=\"  \"_-           | ||\"\"\"\"\"\"\"-\"--_______     __..
-                     ___.===\"\"\"\"-.______-,,,,,,,,,,,,,-\\''----\" \"\"\"\"\"      \"\"\"\"\" \"_ 
-              __.--\"\"     __        ,'                   o \\           __        [_|
-         __-\"\"=======.--\"\"  \"\"--.=================================.--\"\"  \"\"--.=======:
-        ]       [w] : /        \ : |== Welcome to the ======|    : /        \ :  [w] :
-        V___________:|          |: |= Car Hacking Village ==|    :|          |:   _-
-         V__________: \        / :_|=======================/_____: \        / :__-
-         -----------'  \"-____-\"  --------------------------------'  \"-____-\"
+echo "
 
 
 
-        Welcome to the Car Hacking Village.  This is SUPER BETA!
-        If you need help find us on the discord or slack or by phone at 617-440-8667
-	Please wait while we set things up for you to hack...
+                                _.-=\"\"_-         _
+                           _.-=\"  \"_-           | ||\"\"\"\"\"\"\"-\"--_______     __..
+               ___.===\"\"\"\"-.______-,,,,,,,,,,,,,-\\''----\" \"\"\"\"\"      \"\"\"\"\" \"_
+        __.--\"\"     __        ,'                   o \\           __        [_|
+   __-\"\"=======.--\"\"  \"\"--.=================================.--\"\"  \"\"--.=======:
+  ]       [w] : /        \ : |== Welcome to the ======|    : /        \ :  [w] :
+  V___________:|          |: |= Car Hacking Village ==|    :|          |:   _-
+   V__________: \        / :_|=======================/_____: \        / :__-
+   -----------'  \"-____-\"  --------------------------------'  \"-____-\"
+
+
+
+  Welcome to the Car Hacking Village.  This is SUPER BETA!
+  If you need help find us on the discord or slack or by phone at 617-440-8667
+  Please wait while we set things up for you to hack...
 
 EOF
 
