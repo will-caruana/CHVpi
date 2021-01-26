@@ -49,10 +49,10 @@ sudo apt-get install -y python3-pip python3-pil python3-numpy
 sudo apt-get install -y raspberrypi-kernel-headers linux-kernel-headers 
 
 echo "Installing development libraries"
-sudo apt-get install -qq -y libusb-1.0-0-dev libboost-all-dev libpcap-dev libconfuse-dev libffi-dev libbsd-dev xorg-dev
+sudo apt-get install -qq -y libusb-1.0-0-dev libboost-all-dev libpcap-dev libconfuse-dev libffi-dev libbsd-dev xorg-dev libsctp-dev lksctp-tools
 
 echo "Installing additional tools..."
-sudo apt-get install -qq -y doxygen autoconf graphviz autopoint
+sudo apt-get install -qq -y doxygen autoconf graphviz autopoint openvpn zip minicom
 sudo apt-get install -qq -y flex gawk lexicon gettext binutils samba lynx binwalk screen can-utils tmate fail2ban
 
 if [ $1 = "sdr" ]; then
@@ -81,6 +81,8 @@ treelib
 pyrtlsdr
 reversegear
 cantact
+j1939
+
 EOF
 
 if [[ $1 = "sdr" ]]; then
@@ -142,6 +144,13 @@ sudo mkdir -p $SCRIPT_DIR/icsscand/build
 sudo cmake -S $SCRIPT_DIR/icsscand/ -B $SCRIPT_DIR/icsscand/build -DCMAKE_BUILD_TYPE=Release
 sudo make -C $SCRIPT_DIR/icsscand/build/. -j8
 sudo $SCRIPT_DIR/icsscand/build/libicsneo-socketcan-daemon
+
+sudo cd $SCRIPT_DIR
+sudo git clone --recursive https://github.com/mguentner/cannelloni
+sudo mkdir -p $SCRIPT_DIR/cannelloni/build
+sudo cmake -S $SCRIPT_DIR/cannelloni/ -B $SCRIPT_DIR/cannelloni/build -DCMAKE_BUILD_TYPE=Release
+sudo make -C $SCRIPT_DIR/cannelloni/build/. -j8
+sudo make install -C $SCRIPT_DIR/cannelloni/build/.
 
 sudo cd $SCRIPT_DIR
 sudo git clone https://github.com/linted/HardwareCheckout.git
