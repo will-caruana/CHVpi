@@ -82,6 +82,7 @@ pyrtlsdr
 reversegear
 cantact
 j1939
+crc
 
 EOF
 
