@@ -1,5 +1,5 @@
 #! /usr/bin/python3
-# Author: carfucar
+# Author: @carfucar
 from controllerareanetwork import ControllerAreaNetwork
 import socket
 import struct
