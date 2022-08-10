@@ -1,4 +1,5 @@
 #! /usr/bin/python3
+#Author: @carfucar
 import socket
 import struct
 import math
